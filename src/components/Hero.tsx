@@ -324,15 +324,15 @@ Usually replies same day
 
                 {/* name plate */}
                 <div className="absolute inset-x-4 bottom-4 flex items-end justify-between gap-3">
-                  <div className="rounded-2xl border border-white/12 bg-ink-950/80 px-3.5 py-2.5 backdrop-blur-xl shadow-lg">
-                    <p className="text-[13px] font-semibold leading-tight text-white">{PROFILE.name}</p>
-                    <p className="mt-0.5 font-mono text-[9.5px] uppercase tracking-[0.2em] text-bronze-400/90">
+                  <div className="rounded-2xl border border-slate-900/10 dark:border-white/12 bg-white/95 dark:bg-ink-950/90 px-3.5 py-2.5 backdrop-blur-xl shadow-xl">
+                    <p className="text-[13px] font-bold leading-tight text-slate-900 dark:text-white">{PROFILE.name}</p>
+                    <p className="mt-0.5 font-mono text-[9.5px] uppercase tracking-[0.2em] text-bronze-700 dark:text-bronze-400 font-semibold">
                       {PROFILE.role}
                     </p>
                   </div>
-                  <div className="hidden rounded-2xl border border-white/12 bg-ink-950/80 px-3 py-2 text-right backdrop-blur-xl sm:block shadow-lg">
-                    <p className="tabnum text-[15px] font-semibold leading-none text-white">B.Tech</p>
-                    <p className="mt-1 font-mono text-[8.5px] uppercase tracking-[0.18em] text-ash-400">AI &amp; ML</p>
+                  <div className="hidden rounded-2xl border border-slate-900/10 dark:border-white/12 bg-white/95 dark:bg-ink-950/90 px-3 py-2 text-right backdrop-blur-xl sm:block shadow-xl">
+                    <p className="tabnum text-[15px] font-bold leading-none text-slate-900 dark:text-white">B.Tech</p>
+                    <p className="mt-1 font-mono text-[8.5px] uppercase tracking-[0.18em] text-slate-600 dark:text-ash-400 font-semibold">AI &amp; ML</p>
                   </div>
                 </div>
               </div>
@@ -341,16 +341,16 @@ Usually replies same day
 
             {/* ---- floating glass cards ---- */}
             <div className="absolute -right-3 top-[40%] z-40 hidden animate-[bob_8.5s_ease-in-out_0.9s_infinite] sm:block lg:-right-12">
-              <div className="rounded-2xl glass px-3.5 py-3 shadow-[0_24px_60px_-24px_rgba(0,0,0,.9)]">
-                <p className="text-[9px] uppercase tracking-[0.16em] text-ash-400">projects shipped</p>
-                <p className="tabnum mt-1 text-[17px] font-semibold leading-none text-white">
-                  7<span className="text-bronze-400">+</span>
+              <div className="rounded-2xl border border-slate-900/10 dark:border-white/10 bg-white/95 dark:bg-ink-950/80 px-3.5 py-3 backdrop-blur-xl shadow-xl">
+                <p className="text-[9.5px] uppercase tracking-[0.16em] text-slate-600 dark:text-ash-400 font-semibold">projects shipped</p>
+                <p className="tabnum mt-1 text-[17px] font-bold leading-none text-slate-900 dark:text-white">
+                  7<span className="text-bronze-600 dark:text-bronze-400">+</span>
                 </p>
                 <div className="mt-2 flex items-end gap-[3px]">
                   {[40, 62, 48, 80, 66, 94, 74].map((h, i) => (
                     <span
                       key={i}
-                      className="w-[3px] rounded-full bg-gradient-to-t from-bronze-600/40 to-bronze-300"
+                      className="w-[3px] rounded-full bg-gradient-to-t from-bronze-600/40 to-bronze-400"
                       style={{ height: `${h * 0.22}px`, animation: `ticker ${2 + i * 0.22}s ease-in-out infinite` }}
                     />
                   ))}
@@ -359,19 +359,19 @@ Usually replies same day
             </div>
 
             <div className="absolute -left-4 bottom-[8%] z-40 hidden animate-[bob_9.5s_ease-in-out_0.4s_infinite] lg:block lg:-left-16">
-              <div className="flex items-center gap-2.5 rounded-full glass py-2 pl-2 pr-4">
+              <div className="flex items-center gap-2.5 rounded-full border border-slate-900/10 dark:border-white/10 bg-white/95 dark:bg-ink-950/80 py-2 pl-2 pr-4 backdrop-blur-xl shadow-xl">
                 <span className="flex -space-x-2">
                   {["X", "V", "I"].map((l) => (
                     <span
                       key={l}
-                      className="grid h-6 w-6 place-items-center rounded-full border border-bronze-300/40 bg-gradient-to-br from-bronze-500 to-bronze-600 text-[9px] font-semibold text-[#1c130a]"
+                      className="grid h-6 w-6 place-items-center rounded-full border border-bronze-300/40 bg-gradient-to-br from-bronze-400 to-bronze-600 text-[9px] font-bold text-white shadow-sm"
                     >
                       {l}
                     </span>
                   ))}
                 </span>
-                <span className="text-[10px] leading-tight text-ash-300">
-                  <span className="font-semibold text-ash-100">3 internships</span> done
+                <span className="text-[10.5px] leading-tight text-slate-700 dark:text-ash-300 font-medium">
+                  <span className="font-bold text-slate-900 dark:text-ash-100">3 internships</span> done
                 </span>
               </div>
             </div>
