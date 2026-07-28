@@ -44,13 +44,13 @@ export default function Footer() {
           </Reveal>
 
           <Reveal delay={80} className="lg:col-span-2 lg:col-start-7">
-            <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-ink-500">Navigate</p>
+            <p className="font-mono text-[10.5px] font-semibold uppercase tracking-[0.24em] text-bronze-300/90">Navigate</p>
             <ul className="mt-5 space-y-2.5">
               {NAV.map((n) => (
                 <li key={n.id}>
                   <a
                     href={`#${n.id}`}
-                    className="group inline-flex items-center gap-2 text-[13px] text-ash-400 transition-colors duration-300 hover:text-white"
+                    className="group inline-flex items-center gap-2 text-[13.5px] font-medium text-ash-300 transition-colors duration-300 hover:text-white"
                   >
                     <span className="h-px w-0 bg-bronze-400 transition-all duration-400 group-hover:w-3" />
                     {n.label}
@@ -61,7 +61,7 @@ export default function Footer() {
           </Reveal>
 
           <Reveal delay={140} className="lg:col-span-2">
-            <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-ink-500">Elsewhere</p>
+            <p className="font-mono text-[10.5px] font-semibold uppercase tracking-[0.24em] text-bronze-300/90">Elsewhere</p>
             <ul className="mt-5 space-y-2.5">
               {SOCIALS.map((s) => (
                 <li key={s.l}>
@@ -69,7 +69,7 @@ export default function Footer() {
                     href={s.h}
                     target="_blank"
                     rel="noreferrer"
-                    className="group inline-flex items-center gap-2 text-[13px] text-ash-400 transition-colors duration-300 hover:text-white"
+                    className="group inline-flex items-center gap-2 text-[13.5px] font-medium text-ash-300 transition-colors duration-300 hover:text-white"
                   >
                     <span className="h-px w-0 bg-bronze-400 transition-all duration-400 group-hover:w-3" />
                     {s.l}
@@ -80,38 +80,38 @@ export default function Footer() {
           </Reveal>
 
           <Reveal delay={200} className="col-span-2 lg:col-span-3">
-            <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-ink-500">Status</p>
-            <div className="mt-5 rounded-2xl glass p-5">
+            <p className="font-mono text-[10.5px] font-semibold uppercase tracking-[0.24em] text-bronze-300/90">Status</p>
+            <div className="mt-5 rounded-2xl glass border border-white/10 p-5">
               <div className="flex items-center gap-2.5">
                 <span className="relative flex h-2 w-2">
                   <span className="absolute h-full w-full rounded-full bg-emerald-400 opacity-70 animate-[pulseRing_2.8s_ease-out_infinite]" />
                   <span className="h-2 w-2 rounded-full bg-emerald-400" />
                 </span>
-                <span className="text-[12px] font-medium text-emerald-300/90">Open to opportunities</span>
+                <span className="text-[12.5px] font-semibold text-emerald-400">Open to opportunities</span>
               </div>
-              <p className="mt-3 text-[12px] leading-relaxed text-ash-400">
+              <p className="mt-3 text-[12.5px] leading-relaxed text-ash-200">
                 Actively looking for Data Science &amp; ML internships. Available to start immediately.
               </p>
-              <div className="mt-4 h-1.5 overflow-hidden rounded-full neu-inset">
+              <div className="mt-4 h-1.5 overflow-hidden rounded-full bg-white/10">
                 <div className="h-full w-[88%] rounded-full bg-gradient-to-r from-bronze-600 to-bronze-300" />
               </div>
-              <p className="mt-2 font-mono text-[9.5px] uppercase tracking-[0.14em] text-ink-500">
+              <p className="mt-2.5 font-mono text-[10px] font-medium uppercase tracking-[0.14em] text-ash-400">
                 Ready to contribute
               </p>
             </div>
           </Reveal>
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/[0.06] py-7 sm:flex-row">
-          <p className="text-[11.5px] text-ink-500">
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/[0.08] py-7 sm:flex-row">
+          <p className="text-[12px] text-ash-400">
             © {new Date().getFullYear()} {PROFILE.name}. Designed &amp; built from scratch — no templates.
           </p>
-          <div className="flex items-center gap-5 font-mono text-[10px] uppercase tracking-[0.18em] text-ink-500">
+          <div className="flex items-center gap-5 font-mono text-[10.5px] uppercase tracking-[0.18em] text-ash-400">
             <span>React 19</span>
-            <span className="h-1 w-1 rotate-45 bg-ink-600" />
+            <span className="h-1 w-1 rotate-45 bg-bronze-400/60" />
             <span>Tailwind v4</span>
-            <span className="h-1 w-1 rotate-45 bg-ink-600" />
-            <a href="#home" className="transition-colors hover:text-bronze-300">
+            <span className="h-1 w-1 rotate-45 bg-bronze-400/60" />
+            <a href="#home" className="font-semibold text-bronze-300 transition-colors hover:text-white">
               Back to top ↑
             </a>
           </div>
