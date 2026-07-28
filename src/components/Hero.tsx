@@ -180,7 +180,7 @@ export default function Hero() {
           </p>
 
           <div style={rise(650)} className="mt-9 flex flex-wrap items-center gap-3">
-            <PrimaryButton href="#contact">
+            <PrimaryButton href={`mailto:${PROFILE.email}?subject=Emmanuel%20Joshua%20-%20R%C3%A9sum%C3%A9%20Request`}>
               Download résumé
               <svg viewBox="0 0 24 24" className="h-4 w-4 transition-transform duration-500 group-hover:translate-y-0.5" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 3v13m0 0 4.5-4.5M12 16l-4.5-4.5M4 20h16" />
@@ -381,14 +381,14 @@ Usually replies same day
 
       {/* ---------- tool marquee (silky smooth 120 FPS hardware accelerated) ---------- */}
       <div className="relative z-10 mt-16 lg:mt-14" style={rise(880)}>
-        <div className="mask-fade-x flex overflow-hidden border-y border-white/5 bg-white/[0.015] py-3.5 transform-gpu will-change-transform">
+        <div className="mask-fade-x flex overflow-hidden border-y border-slate-200 dark:border-white/5 bg-slate-100/50 dark:bg-white/[0.015] py-3.5 transform-gpu will-change-transform">
           <div className="flex shrink-0 animate-[marquee_42s_linear_infinite] items-center gap-10 pr-10 transform-gpu">
             {[...TOOLS, ...TOOLS].map((t, i) => (
               <span key={`${t}-${i}`} className="flex shrink-0 items-center gap-10">
-                <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-ink-500 transition-colors duration-300 hover:text-bronze-300">
+                <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-slate-700 dark:text-ash-300 font-semibold transition-colors duration-300 hover:text-bronze-600 dark:hover:text-bronze-300">
                   {t}
                 </span>
-                <span className="h-1 w-1 rotate-45 bg-ink-600" />
+                <span className="h-1 w-1 rotate-45 bg-slate-400 dark:bg-ink-600" />
               </span>
             ))}
           </div>

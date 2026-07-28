@@ -116,22 +116,35 @@ export default function Experience() {
           {/* education terminus */}
           <Reveal delay={120} className="relative mt-6">
             <span className="absolute -left-10 top-6 sm:-left-16 lg:-left-24">
-              <span className="ml-[8px] block h-2.5 w-2.5 rounded-full border border-ink-500 bg-ink-900 sm:ml-[22px] lg:ml-[38px]" />
+              <span className="ml-[8px] block h-2.5 w-2.5 rounded-full border border-bronze-400 bg-bronze-500 sm:ml-[22px] lg:ml-[38px]" />
             </span>
-            <div className="rounded-3xl neu p-6 sm:p-7">
+            <div className="rounded-3xl glass border border-white/10 p-6 sm:p-7">
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <div>
-                  <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-ink-500">Education</p>
-                  <h3 className="mt-2 text-[16px] font-semibold text-ash-100">
-                    M.Sc. Machine Learning — Savitribai Phule Pune University
-                  </h3>
-                  <p className="mt-1 text-[12.5px] text-ash-400">
-                    2014 – 2018 · First class with distinction · Thesis on sequence models for time-series forecasting
+                  <p className="font-mono text-[10.5px] font-semibold uppercase tracking-[0.24em] text-bronze-400 dark:text-bronze-300">
+                    Education &amp; Academic Background
                   </p>
+                  <h3 className="mt-2 text-[17px] font-bold text-slate-900 dark:text-white">
+                    B.Tech in Artificial Intelligence &amp; Machine Learning — SNS College of Technology, Coimbatore
+                  </h3>
+                  <p className="mt-1.5 text-[13px] text-slate-600 dark:text-ash-300">
+                    2022 – 2026 · Pursuing Bachelor's Degree · Focus on AI, Machine Learning, Statistical Modeling &amp; Deep Learning
+                  </p>
+                  <div className="mt-3 flex flex-wrap items-center gap-2">
+                    <span className="rounded-lg border border-bronze-400/30 bg-bronze-400/10 px-3 py-1 text-[12px] font-semibold text-bronze-700 dark:text-bronze-300">
+                      Executive PG in Data Science &amp; AI — IIT Roorkee &amp; Intellipaat (2024 – 2025)
+                    </span>
+                  </div>
                 </div>
-                <GhostButton href="#contact" className="px-5 py-3 text-[12.5px]">
-                  Get the full CV
-                </GhostButton>
+                <a
+                  href={`mailto:${PROFILE.email}?subject=Emmanuel%20Joshua%20-%20R%C3%A9sum%C3%A9%20Request`}
+                  className="group relative inline-flex items-center gap-2 rounded-full border border-slate-900/10 dark:border-white/10 bg-slate-900 dark:bg-white/[0.04] px-5 py-3 text-[12.5px] font-semibold text-white dark:text-ash-100 backdrop-blur-xl transition-all duration-300 hover:border-bronze-400/40 hover:bg-slate-800 dark:hover:bg-white/[0.08]"
+                >
+                  Request Full Résumé (PDF)
+                  <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 transition-transform duration-500 group-hover:translate-y-0.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 3v13m0 0 4.5-4.5M12 16l-4.5-4.5M4 20h16" />
+                  </svg>
+                </a>
               </div>
             </div>
           </Reveal>
