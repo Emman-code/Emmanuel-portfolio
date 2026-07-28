@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { EXPERIENCE } from "../lib/data";
+import { EXPERIENCE, PROFILE } from "../lib/data";
 import { Reveal } from "./ui/Reveal";
 import { GhostButton, SectionHead, SpotlightCard } from "./ui/atoms";
 
