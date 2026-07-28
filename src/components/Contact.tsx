@@ -70,13 +70,23 @@ export default function Contact() {
               </p>
 
               <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-                <PrimaryButton href={`mailto:${PROFILE.email}`}>
+                <PrimaryButton
+                  href="#start-conversation"
+                  onClick={(e: React.MouseEvent) => {
+                    e.preventDefault();
+                    const formEl = document.getElementById("start-conversation");
+                    formEl?.scrollIntoView({ behavior: "smooth" });
+                    setTimeout(() => {
+                      document.getElementById("name")?.focus();
+                    }, 400);
+                  }}
+                >
                   Say hello
                   <svg viewBox="0 0 24 24" className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 12h13m0 0-5-5m5 5-5 5" />
                   </svg>
                 </PrimaryButton>
-                <GhostButton href={`mailto:${PROFILE.email}`}>
+                <GhostButton href={`mailto:${PROFILE.email}?subject=Résumé Request`}>
                   Download résumé (PDF)
                   <svg viewBox="0 0 24 24" className="h-4 w-4 transition-transform duration-500 group-hover:translate-y-0.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 3v13m0 0 4.5-4.5M12 16l-4.5-4.5M4 20h16" />
@@ -97,7 +107,7 @@ export default function Contact() {
       </div>
 
       {/* ================= form + channels ================= */}
-      <div className="mx-auto mt-20 w-[min(92%,78rem)]">
+      <div id="start-conversation" className="mx-auto mt-20 w-[min(92%,78rem)]">
         <SectionHead
           index="08"
           eyebrow="Contact"
