@@ -14,48 +14,20 @@ export default function ThemeToggle({ className }: { className?: string }) {
       aria-label={dark ? "Switch to light theme" : "Switch to dark theme"}
       title={dark ? "Light mode" : "Dark mode"}
       className={cn(
-        "group relative grid h-9 w-[62px] shrink-0 place-items-center overflow-hidden rounded-full",
-        "neu neu-press transition-all duration-500",
+        "group relative grid h-9 w-[62px] shrink-0 place-items-center overflow-hidden rounded-full border transition-all duration-500",
+        dark
+          ? "border-white/10 bg-black/40 shadow-inner"
+          : "border-slate-300 bg-slate-100 shadow-sm",
         className
       )}
     >
-      {/* twilight track wash */}
-      <span
-        className="pointer-events-none absolute inset-0 rounded-full opacity-70 transition-opacity duration-700"
-        style={{
-          background: dark
-            ? "radial-gradient(120% 120% at 78% 50%, rgba(91,113,133,.28), transparent 60%)"
-            : "radial-gradient(120% 120% at 22% 50%, rgba(200,168,121,.45), transparent 62%)",
-        }}
-      />
-
-      {/* faint stars (dark) */}
-      <span
-        className={cn(
-          "pointer-events-none absolute inset-0 transition-opacity duration-500",
-          dark ? "opacity-100" : "opacity-0"
-        )}
-      >
-        {[
-          [14, 11],
-          [22, 20],
-          [30, 9],
-        ].map(([x, y], i) => (
-          <span
-            key={i}
-            className="absolute h-[2px] w-[2px] rounded-full bg-ash-200"
-            style={{ left: x, top: y, animation: `ticker ${1.8 + i * 0.4}s ease-in-out infinite` }}
-          />
-        ))}
-      </span>
-
       {/* knob */}
       <span
         className={cn(
           "absolute top-1/2 grid h-7 w-7 -translate-y-1/2 place-items-center rounded-full transition-all duration-[550ms] ease-[cubic-bezier(.34,1.56,.64,1)]",
           dark
-            ? "left-1 bg-gradient-to-br from-ink-600 to-ink-800 text-ash-100 shadow-[0_4px_10px_rgba(0,0,0,.5)]"
-            : "left-[30px] bg-gradient-to-br from-white to-bronze-300 text-bronze-600 shadow-[0_4px_12px_rgba(176,141,87,.55)]"
+            ? "left-1 bg-slate-800 text-amber-300 shadow-[0_2px_8px_rgba(0,0,0,0.5)] border border-slate-700"
+            : "left-[30px] bg-white text-amber-600 shadow-[0_2px_8px_rgba(0,0,0,0.15)] border border-slate-200"
         )}
       >
         {/* moon */}

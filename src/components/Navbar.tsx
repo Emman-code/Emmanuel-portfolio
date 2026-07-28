@@ -61,24 +61,29 @@ export default function Navbar() {
 
           {/* desktop links — liquid capsules */}
           <ul className="hidden items-center gap-1 lg:flex">
-            {NAV.map((n) => (
-              <li key={n.id}>
-                <a
-                  href={`#${n.id}`}
-                  className={cn(
-                    "group relative block rounded-full px-4 py-2 text-[12.5px] font-semibold tracking-tight transition-all duration-300",
-                    active === n.id
-                      ? "text-white dark:text-white"
-                      : "text-slate-700 hover:text-slate-900 dark:text-ash-400 dark:hover:text-ash-100"
-                  )}
-                >
-                  {active === n.id && (
-                    <span className="absolute inset-0 rounded-full bg-slate-900 border border-slate-800 dark:border-white/25 dark:bg-gradient-to-b dark:from-white/20 dark:to-white/5 shadow-[0_4px_14px_rgba(15,23,42,0.25)] dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.6),0_4px_16px_-4px_rgba(0,0,0,0.3)] transition-all duration-300" />
-                  )}
-                  <span className="relative z-10">{n.label}</span>
-                </a>
-              </li>
-            ))}
+            {NAV.map((n) => {
+              const isActive = active === n.id;
+              return (
+                <li key={n.id}>
+                  <a
+                    href={`#${n.id}`}
+                    className={cn(
+                      "group relative block rounded-full px-4 py-2 text-[12.5px] font-semibold tracking-tight transition-all duration-300",
+                      isActive
+                        ? "text-white"
+                        : "text-slate-700 hover:text-slate-900 dark:text-ash-400 dark:hover:text-ash-100"
+                    )}
+                  >
+                    {isActive && (
+                      <span className="absolute inset-0 rounded-full bg-slate-900 border border-slate-800 dark:border-white/25 dark:bg-gradient-to-b dark:from-white/20 dark:to-white/5 shadow-[0_4px_14px_rgba(15,23,42,0.3)] dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.6),0_4px_16px_-4px_rgba(0,0,0,0.3)] transition-all duration-300" />
+                    )}
+                    <span className={cn("relative z-10 font-bold", isActive ? "text-white font-bold" : "")}>
+                      {n.label}
+                    </span>
+                  </a>
+                </li>
+              );
+            })}
           </ul>
 
           {/* actions */}
