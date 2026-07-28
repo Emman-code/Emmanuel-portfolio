@@ -22,13 +22,27 @@ export default function Contact() {
   const [sent, setSent] = useState(false);
   const [busy, setBusy] = useState(false);
 
-  const submit = (e: React.FormEvent) => {
+  const submit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setBusy(true);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const name = (formData.get("name") as string) || "";
+    const email = (formData.get("email") as string) || "";
+    const company = (formData.get("company") as string) || "";
+    const role = (formData.get("role") as string) || "";
+    const message = (formData.get("message") as string) || "";
+
+    const mailtoSubject = encodeURIComponent(`Portfolio Message from ${name}${company ? ` (${company})` : ""}`);
+    const mailtoBody = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\nCompany: ${company}\nRole/Subject: ${role}\n\nMessage:\n${message}`
+    );
+
     setTimeout(() => {
+      window.location.href = `mailto:${PROFILE.email}?subject=${mailtoSubject}&body=${mailtoBody}`;
       setBusy(false);
       setSent(true);
-    }, 1100);
+    }, 400);
   };
 
   return (

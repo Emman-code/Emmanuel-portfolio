@@ -37,9 +37,9 @@ export default function Experience() {
         <SectionHead
           index="04"
           eyebrow="Experience"
-          title="Eight years,"
-          accent="four teams, zero regrets."
-          copy="A career built on progressively larger surfaces of ownership — from writing my first production endpoint to setting architecture for a platform serving millions."
+          title="Four years,"
+          accent="building & shipping models."
+          copy="A hands-on journey across AI & ML — from exploratory data analysis and statistical modeling to building and deploying real-time deep learning services."
         />
 
         <div ref={ref} className="relative mt-16 pl-10 sm:pl-16 lg:pl-24">

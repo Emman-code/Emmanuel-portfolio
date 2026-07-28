@@ -119,12 +119,28 @@ function ProjectRow({ p, i }: { p: Project; i: number }) {
             </div>
 
             <div className="mt-7">
-              <GhostButton href="#contact" className="px-5 py-3 text-[12.5px]">
-                Read the case study
-                <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-0.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M7 17 17 7M8 7h9v9" />
-                </svg>
-              </GhostButton>
+              {p.link ? (
+                <a
+                  href={p.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border border-white/10 bg-white/[0.03] px-5 py-3 text-[12.5px] font-medium text-ash-100 backdrop-blur-xl transition-all duration-500 hover:border-bronze-400/35 hover:bg-white/[0.06] hover:text-white"
+                >
+                  <span className="relative z-10 flex items-center gap-2">
+                    View project
+                    <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-0.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M7 17 17 7M8 7h9v9" />
+                    </svg>
+                  </span>
+                </a>
+              ) : (
+                <GhostButton href="#contact" className="px-5 py-3 text-[12.5px]">
+                  View project
+                  <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-0.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M7 17 17 7M8 7h9v9" />
+                  </svg>
+                </GhostButton>
+              )}
             </div>
           </div>
         </div>

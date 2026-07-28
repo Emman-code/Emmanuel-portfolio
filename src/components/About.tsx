@@ -43,7 +43,7 @@ export default function About() {
         <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-6 lg:grid-cols-12">
           {/* narrative */}
           <Reveal dir="left" className="md:col-span-6 lg:col-span-7">
-            <SpotlightCard className="h-full p-7 sm:p-9">
+            <SpotlightCard className="flex h-full flex-col justify-between p-7 sm:p-9">
               <div className="flex items-start justify-between gap-4">
                 <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-bronze-400/80">
                   The short version

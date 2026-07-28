@@ -157,6 +157,7 @@ export const PROJECTS: Project[] = [
     stack: ["YOLOv8", "ResNet50", "Flask", "MongoDB", "OpenCV"],
     image: "/images/proj-1.png",
     accent: "from-bronze-500/25 to-transparent",
+    link: "https://www.vacapay.in/",
   },
   {
     id: "tanglish",
@@ -173,6 +174,7 @@ export const PROJECTS: Project[] = [
     stack: ["XLM-RoBERTa", "Hugging Face", "Gradio", "PyTorch"],
     image: "/images/proj-2.png",
     accent: "from-steel-500/25 to-transparent",
+    link: "https://github.com/Emman-code/Tanglish-Hatespeech-Classifier",
   },
   {
     id: "credence",
@@ -189,6 +191,7 @@ export const PROJECTS: Project[] = [
     stack: ["Python", "NewsAPI", "GNews", "Fact Check API"],
     image: "/images/proj-3.png",
     accent: "from-bronze-400/20 to-transparent",
+    link: "https://github.com/jose-18022007/CREDENCE",
   },
 ];
 

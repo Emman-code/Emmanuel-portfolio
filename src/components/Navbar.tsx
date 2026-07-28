@@ -31,16 +31,16 @@ export default function Navbar() {
       <header
         className={cn(
           "fixed inset-x-0 top-0 z-50 transition-all duration-700 ease-[cubic-bezier(.16,1,.3,1)]",
-          scrolled ? "pt-2.5" : "pt-5"
+          scrolled ? "pt-2.5" : "pt-4"
         )}
       >
         <nav
           aria-label="Primary"
           className={cn(
-            "mx-auto flex max-w-6xl items-center justify-between gap-4 rounded-full px-3 transition-all duration-700 ease-[cubic-bezier(.16,1,.3,1)]",
+            "mx-auto flex max-w-6xl items-center justify-between gap-4 rounded-full px-3.5 py-2 transition-all duration-700 ease-[cubic-bezier(.16,1,.3,1)]",
             scrolled
-              ? "w-[min(96%,72rem)] glass py-2 shadow-[0_20px_60px_-30px_rgba(0,0,0,1)]"
-              : "w-[min(94%,72rem)] border border-transparent py-2.5"
+              ? "w-[min(96%,72rem)] glass-liquid shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)]"
+              : "w-[min(94%,72rem)] glass-liquid border-white/10"
           )}
         >
           {/* mark — EJ monogram */}
@@ -59,22 +59,23 @@ export default function Navbar() {
             </span>
           </a>
 
-          {/* desktop links */}
-          <ul className="hidden items-center gap-0.5 lg:flex">
+          {/* desktop links — liquid capsules */}
+          <ul className="hidden items-center gap-1 lg:flex">
             {NAV.map((n) => (
               <li key={n.id}>
                 <a
                   href={`#${n.id}`}
                   className={cn(
-                    "group relative block rounded-full px-3.5 py-2 text-[12.5px] font-medium tracking-tight transition-colors duration-300",
-                    active === n.id ? "text-white" : "text-ash-400 hover:text-ash-100"
+                    "group relative block rounded-full px-4 py-2 text-[12.5px] font-semibold tracking-tight transition-all duration-300",
+                    active === n.id
+                      ? "text-slate-900 dark:text-white"
+                      : "text-slate-600 hover:text-slate-900 dark:text-ash-400 dark:hover:text-ash-100"
                   )}
                 >
                   {active === n.id && (
-                    <span className="absolute inset-0 rounded-full border border-white/10 bg-white/[0.06] shadow-[inset_0_1px_0_rgba(255,255,255,.09)]" />
+                    <span className="absolute inset-0 rounded-full border border-slate-900/10 dark:border-white/25 bg-white/80 dark:bg-gradient-to-b dark:from-white/20 dark:to-white/5 shadow-[0_2px_10px_rgba(0,0,0,0.06),inset_0_1px_1px_rgba(255,255,255,0.9)] dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.6),0_4px_16px_-4px_rgba(0,0,0,0.3)] transition-all duration-300" />
                   )}
                   <span className="relative z-10">{n.label}</span>
-                  <span className="absolute inset-x-3.5 -bottom-0.5 h-px scale-x-0 bg-gradient-to-r from-transparent via-bronze-400 to-transparent transition-transform duration-500 group-hover:scale-x-100" />
                 </a>
               </li>
             ))}

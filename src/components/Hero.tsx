@@ -116,20 +116,8 @@ export default function Hero() {
 
       <div className="relative z-10 mx-auto grid w-[min(92%,78rem)] grid-cols-1 items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
         {/* ================= LEFT — kinetic type ================= */}
-        <div className="order-2 lg:order-1">
-          <div style={rise(80)} className="inline-flex items-center gap-2.5 rounded-full border border-white/8 bg-white/[0.035] py-1.5 pl-2 pr-4 backdrop-blur-xl">
-            <span className="relative flex h-6 w-6 items-center justify-center rounded-full bg-emerald-400/12">
-              <span className="absolute h-2 w-2 rounded-full bg-emerald-400/70 animate-[pulseRing_2.6s_ease-out_infinite]" />
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            </span>
-            <span className="text-[11px] font-medium tracking-[0.14em] text-ash-300 uppercase">
-              Open to work
-            </span>
-            <span className="h-3 w-px bg-white/10" />
-            <span className="font-mono text-[10.5px] text-bronze-400/90">Open to internships</span>
-          </div>
-
-          <h1 className="mt-7 text-[clamp(2.7rem,7.4vw,5.4rem)] font-semibold leading-[0.93] tracking-[-0.045em]">
+        <div className="order-2 lg:order-1 pt-4">
+          <h1 className="text-[clamp(2.7rem,7.4vw,5.4rem)] font-semibold leading-[0.93] tracking-[-0.045em]">
             <span className="block">
               <span className="block pb-[0.06em] text-ash-100" style={rise(180)}>
                 {PROFILE.first}
@@ -300,30 +288,26 @@ Usually replies same day
                   ))}
                 </div>
 
-                {/* portrait */}
+                {/* portrait — clean, bright, unmasked in light mode */}
                 <img
                   src="/images/portrait.png"
                   alt={`${PROFILE.name}, ${PROFILE.role}`}
                   className="absolute inset-0 h-full w-full scale-[1.02] object-cover object-top transition-transform duration-[1400ms] ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-[1.07]"
                   style={{
-                    filter: "contrast(1.06) brightness(0.98)",
-                    maskImage:
-                      "linear-gradient(to bottom, #000 0%, #000 70%, rgba(0,0,0,.6) 88%, transparent 100%)",
-                    WebkitMaskImage:
-                      "linear-gradient(to bottom, #000 0%, #000 70%, rgba(0,0,0,.6) 88%, transparent 100%)",
+                    filter: "contrast(1.04) brightness(1.02)",
                   }}
                 />
 
-                {/* duotone wash */}
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-bronze-600/28 via-transparent to-steel-500/12 mix-blend-color" />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/10 to-transparent" />
+                {/* duotone wash — dark theme only */}
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-bronze-600/20 via-transparent to-steel-500/10 mix-blend-color dark:block hidden" />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/10 to-transparent dark:block hidden" />
 
                 {/* scanline sweep */}
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-[9%] bg-[linear-gradient(to_bottom,transparent,rgba(220,196,160,.13),transparent)] animate-[sweepY_7s_linear_infinite]" />
 
                 {/* horizontal micro-lines */}
                 <div
-                  className="pointer-events-none absolute inset-0 opacity-[0.16] mix-blend-overlay"
+                  className="pointer-events-none absolute inset-0 opacity-[0.12] mix-blend-overlay"
                   style={{
                     backgroundImage:
                       "repeating-linear-gradient(to bottom, rgba(255,255,255,.5) 0 1px, transparent 1px 4px)",
@@ -340,13 +324,13 @@ Usually replies same day
 
                 {/* name plate */}
                 <div className="absolute inset-x-4 bottom-4 flex items-end justify-between gap-3">
-                  <div className="rounded-2xl border border-white/8 bg-ink-950/55 px-3.5 py-2.5 backdrop-blur-xl">
+                  <div className="rounded-2xl border border-white/12 bg-ink-950/80 px-3.5 py-2.5 backdrop-blur-xl shadow-lg">
                     <p className="text-[13px] font-semibold leading-tight text-white">{PROFILE.name}</p>
                     <p className="mt-0.5 font-mono text-[9.5px] uppercase tracking-[0.2em] text-bronze-400/90">
                       {PROFILE.role}
                     </p>
                   </div>
-                  <div className="hidden rounded-2xl border border-white/8 bg-ink-950/55 px-3 py-2 text-right backdrop-blur-xl sm:block">
+                  <div className="hidden rounded-2xl border border-white/12 bg-ink-950/80 px-3 py-2 text-right backdrop-blur-xl sm:block shadow-lg">
                     <p className="tabnum text-[15px] font-semibold leading-none text-white">B.Tech</p>
                     <p className="mt-1 font-mono text-[8.5px] uppercase tracking-[0.18em] text-ash-400">AI &amp; ML</p>
                   </div>
@@ -355,21 +339,7 @@ Usually replies same day
 
             </div>
 
-            {/* ---- floating glass cards (OUTSIDE the 3D tilt so they always sit on top) ---- */}
-            <div className="absolute -left-3 top-[16%] z-40 hidden animate-[bob_7s_ease-in-out_infinite] sm:block lg:-left-12">
-              <div className="rounded-2xl glass px-3.5 py-3 shadow-[0_24px_60px_-24px_rgba(0,0,0,.9)]">
-                <div className="flex items-center gap-2">
-                  <span className="grid h-6 w-6 place-items-center rounded-lg bg-bronze-400/14 text-bronze-300">
-                    <svg viewBox="0 0 24 24" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="m13 2-9 12h7l-1 8 9-12h-7z" /></svg>
-                  </span>
-                  <div>
-                    <p className="tabnum text-[13px] font-semibold leading-none text-white">YOLOv8</p>
-                    <p className="mt-1 text-[9px] uppercase tracking-[0.16em] text-ash-400">detection</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+            {/* ---- floating glass cards ---- */}
             <div className="absolute -right-3 top-[40%] z-40 hidden animate-[bob_8.5s_ease-in-out_0.9s_infinite] sm:block lg:-right-12">
               <div className="rounded-2xl glass px-3.5 py-3 shadow-[0_24px_60px_-24px_rgba(0,0,0,.9)]">
                 <p className="text-[9px] uppercase tracking-[0.16em] text-ash-400">projects shipped</p>
@@ -409,10 +379,10 @@ Usually replies same day
         </div>
       </div>
 
-      {/* ---------- tool marquee ---------- */}
+      {/* ---------- tool marquee (silky smooth 120 FPS hardware accelerated) ---------- */}
       <div className="relative z-10 mt-16 lg:mt-14" style={rise(880)}>
-        <div className="mask-fade-x flex overflow-hidden border-y border-white/5 bg-white/[0.015] py-3.5 backdrop-blur-sm">
-          <div className="flex shrink-0 animate-[marquee_42s_linear_infinite] items-center gap-10 pr-10">
+        <div className="mask-fade-x flex overflow-hidden border-y border-white/5 bg-white/[0.015] py-3.5 transform-gpu will-change-transform">
+          <div className="flex shrink-0 animate-[marquee_42s_linear_infinite] items-center gap-10 pr-10 transform-gpu">
             {[...TOOLS, ...TOOLS].map((t, i) => (
               <span key={`${t}-${i}`} className="flex shrink-0 items-center gap-10">
                 <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-ink-500 transition-colors duration-300 hover:text-bronze-300">
