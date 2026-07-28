@@ -39,8 +39,8 @@ export default function Navbar() {
           className={cn(
             "mx-auto flex max-w-6xl items-center justify-between gap-4 rounded-full px-3.5 py-2 transition-all duration-700 ease-[cubic-bezier(.16,1,.3,1)]",
             scrolled
-              ? "w-[min(96%,72rem)] glass-liquid shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)]"
-              : "w-[min(94%,72rem)] glass-liquid border-white/10"
+              ? "w-[min(96%,72rem)] glass-liquid border border-slate-200/70 dark:border-white/10 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.08)] dark:shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)]"
+              : "w-[min(94%,72rem)] glass-liquid border border-slate-200/50 dark:border-white/10"
           )}
         >
           {/* mark — EJ monogram */}
@@ -48,14 +48,14 @@ export default function Navbar() {
             <span className="relative grid h-9 w-9 place-items-center overflow-hidden rounded-xl neu transition-transform duration-500 group-hover:rotate-[6deg] group-hover:scale-105">
               <span className="absolute inset-0 rounded-xl bg-gradient-to-br from-bronze-400/25 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               <span className="absolute -left-full top-0 h-full w-full skew-x-[-20deg] bg-gradient-to-r from-transparent via-white/25 to-transparent transition-all duration-700 group-hover:left-full" />
-              <span className="relative font-display text-[14px] font-semibold leading-none tracking-tight text-bronze-200">
-                E<span className="text-ash-200">J</span>
+              <span className="relative font-display text-[14px] font-semibold leading-none tracking-tight text-slate-800 dark:text-bronze-200">
+                E<span className="text-slate-500 dark:text-ash-200">J</span>
               </span>
             </span>
-            <span className="hidden text-[13.5px] font-semibold tracking-tight text-ash-100 sm:block">
+            <span className="hidden text-[13.5px] font-semibold tracking-tight text-slate-900 dark:text-ash-100 sm:block">
               {PROFILE.first}
-              <span className="text-bronze-400"> </span>
-              <span className="text-ash-400">{PROFILE.last}</span>
+              <span className="text-bronze-500 dark:text-bronze-400"> </span>
+              <span className="text-slate-500 dark:text-ash-400">{PROFILE.last}</span>
             </span>
           </a>
 
@@ -70,14 +70,14 @@ export default function Navbar() {
                     className={cn(
                       "group relative block rounded-full px-4 py-2 text-[12.5px] font-semibold tracking-tight transition-all duration-300",
                       isActive
-                        ? "text-white"
-                        : "text-slate-700 hover:text-slate-900 dark:text-ash-400 dark:hover:text-ash-100"
+                        ? "text-slate-900 dark:text-white"
+                        : "text-slate-600 hover:text-slate-900 dark:text-ash-400 dark:hover:text-ash-100"
                     )}
                   >
                     {isActive && (
-                      <span className="absolute inset-0 rounded-full bg-slate-900 border border-slate-800 dark:border-white/25 dark:bg-gradient-to-b dark:from-white/20 dark:to-white/5 shadow-[0_4px_14px_rgba(15,23,42,0.3)] dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.6),0_4px_16px_-4px_rgba(0,0,0,0.3)] transition-all duration-300" />
+                      <span className="absolute inset-0 rounded-full bg-white/90 border border-slate-200/80 shadow-[0_2px_8px_rgba(15,23,42,0.08)] dark:border-white/25 dark:bg-gradient-to-b dark:from-white/20 dark:to-white/5 dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.6),0_4px_16px_-4px_rgba(0,0,0,0.3)] transition-all duration-300" />
                     )}
-                    <span className={cn("relative z-10 font-bold", isActive ? "text-white font-bold" : "")}>
+                    <span className={cn("relative z-10 font-bold", isActive ? "font-bold text-slate-900 dark:text-white" : "")}>
                       {n.label}
                     </span>
                   </a>
@@ -104,9 +104,9 @@ export default function Navbar() {
               className="grid h-10 w-10 place-items-center rounded-full neu neu-press lg:hidden"
             >
               <span className="relative block h-3 w-4">
-                <span className={cn("absolute left-0 block h-[1.5px] w-4 rounded bg-ash-100 transition-all duration-400", open ? "top-1.5 rotate-45" : "top-0")} />
-                <span className={cn("absolute left-0 top-1.5 block h-[1.5px] rounded bg-ash-100 transition-all duration-300", open ? "w-0 opacity-0" : "w-4")} />
-                <span className={cn("absolute left-0 block h-[1.5px] w-4 rounded bg-ash-100 transition-all duration-400", open ? "top-1.5 -rotate-45" : "top-3")} />
+                <span className={cn("absolute left-0 block h-[1.5px] w-4 rounded bg-slate-800 dark:bg-ash-100 transition-all duration-400", open ? "top-1.5 rotate-45" : "top-0")} />
+                <span className={cn("absolute left-0 top-1.5 block h-[1.5px] rounded bg-slate-800 dark:bg-ash-100 transition-all duration-300", open ? "w-0 opacity-0" : "w-4")} />
+                <span className={cn("absolute left-0 block h-[1.5px] w-4 rounded bg-slate-800 dark:bg-ash-100 transition-all duration-400", open ? "top-1.5 -rotate-45" : "top-3")} />
               </span>
             </button>
           </div>

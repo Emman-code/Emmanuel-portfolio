@@ -180,12 +180,18 @@ export default function Hero() {
           </p>
 
           <div style={rise(650)} className="mt-9 flex flex-wrap items-center gap-3">
-            <PrimaryButton href={`mailto:${PROFILE.email}?subject=Emmanuel%20Joshua%20-%20R%C3%A9sum%C3%A9%20Request`}>
+            <a
+              href="/EMMANUEL_RESUME_N2.pdf"
+              target="_blank"
+              rel="noreferrer"
+              download="EMMANUEL_JOSHUA_RESUME.pdf"
+              className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-b from-bronze-300 via-bronze-400 to-bronze-500 px-6 py-3.5 text-[13px] font-semibold text-[#1c130a] shadow-[0_12px_28px_-10px_rgba(200,168,121,0.6)] transition-all duration-500 hover:-translate-y-0.5 hover:shadow-[0_18px_36px_-12px_rgba(200,168,121,0.8)]"
+            >
               Download résumé
               <svg viewBox="0 0 24 24" className="h-4 w-4 transition-transform duration-500 group-hover:translate-y-0.5" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 3v13m0 0 4.5-4.5M12 16l-4.5-4.5M4 20h16" />
               </svg>
-            </PrimaryButton>
+            </a>
             <GhostButton href="#work">
               Explore selected work
               <svg viewBox="0 0 24 24" className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">

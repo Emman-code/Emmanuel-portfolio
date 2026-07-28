@@ -137,10 +137,13 @@ export default function Experience() {
                   </div>
                 </div>
                 <a
-                  href={`mailto:${PROFILE.email}?subject=Emmanuel%20Joshua%20-%20R%C3%A9sum%C3%A9%20Request`}
+                  href="/EMMANUEL_RESUME_N2.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  download="EMMANUEL_JOSHUA_RESUME.pdf"
                   className="group relative inline-flex items-center gap-2 rounded-full border border-slate-900/10 dark:border-white/10 bg-slate-900 dark:bg-white/[0.04] px-5 py-3 text-[12.5px] font-semibold text-white dark:text-ash-100 backdrop-blur-xl transition-all duration-300 hover:border-bronze-400/40 hover:bg-slate-800 dark:hover:bg-white/[0.08]"
                 >
-                  Request Full Résumé (PDF)
+                  Download Full Résumé (PDF)
                   <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 transition-transform duration-500 group-hover:translate-y-0.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 3v13m0 0 4.5-4.5M12 16l-4.5-4.5M4 20h16" />
                   </svg>

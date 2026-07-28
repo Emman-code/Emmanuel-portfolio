@@ -86,12 +86,18 @@ export default function Contact() {
                     <path d="M5 12h13m0 0-5-5m5 5-5 5" />
                   </svg>
                 </PrimaryButton>
-                <GhostButton href={`mailto:${PROFILE.email}?subject=Résumé Request`}>
+                <a
+                  href="/EMMANUEL_RESUME_N2.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  download="EMMANUEL_JOSHUA_RESUME.pdf"
+                  className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-[12.5px] font-semibold text-ash-100 backdrop-blur-xl transition-all duration-300 hover:border-bronze-400/40 hover:bg-white/[0.08] hover:text-white"
+                >
                   Download résumé (PDF)
                   <svg viewBox="0 0 24 24" className="h-4 w-4 transition-transform duration-500 group-hover:translate-y-0.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 3v13m0 0 4.5-4.5M12 16l-4.5-4.5M4 20h16" />
                   </svg>
-                </GhostButton>
+                </a>
               </div>
 
               <div className="mt-9 flex flex-wrap items-center justify-center gap-x-7 gap-y-2 font-mono text-[10.5px] uppercase tracking-[0.18em] text-ink-500">
