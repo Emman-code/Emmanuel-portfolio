@@ -142,12 +142,12 @@ export default function Contact() {
                     </span>
                   </div>
 
-                  <div className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  <div className="mt-7 grid grid-cols-1 gap-4.5 sm:grid-cols-2">
                     {FIELDS.map((f) => (
                       <div key={f.id} className={cn("group relative", !f.half && "sm:col-span-2")}>
                         <label
                           htmlFor={f.id}
-                          className="mb-2 block font-mono text-[10px] uppercase tracking-[0.18em] text-ink-500 transition-colors duration-300 group-focus-within:text-bronze-300"
+                          className="mb-2 block font-mono text-[10.5px] uppercase tracking-[0.18em] text-ash-300 transition-colors duration-300 group-focus-within:text-bronze-300"
                         >
                           {f.label}
                         </label>
@@ -157,7 +157,7 @@ export default function Contact() {
                           type={f.type}
                           required={f.id === "name" || f.id === "email"}
                           placeholder={f.placeholder}
-                          className="w-full rounded-xl neu-inset px-4 py-3 text-[13.5px] text-ash-100 placeholder:text-ink-500 outline-none transition-all duration-400 focus:shadow-[inset_4px_4px_10px_rgba(0,0,0,.7),inset_-4px_-4px_10px_rgba(255,255,255,.03),0_0_0_1px_rgba(200,168,121,.4)]"
+                          className="w-full rounded-xl border border-white/12 bg-white/[0.04] px-4 py-3 text-[14px] text-white placeholder:text-ash-400/40 outline-none backdrop-blur-md transition-all duration-300 focus:border-bronze-400/80 focus:bg-white/[0.07] focus:shadow-[0_0_20px_rgba(200,168,121,0.18)]"
                         />
                       </div>
                     ))}
@@ -165,24 +165,24 @@ export default function Contact() {
                     <div className="group sm:col-span-2">
                       <label
                         htmlFor="message"
-                        className="mb-2 block font-mono text-[10px] uppercase tracking-[0.18em] text-ink-500 transition-colors duration-300 group-focus-within:text-bronze-300"
+                        className="mb-2 block font-mono text-[10.5px] uppercase tracking-[0.18em] text-ash-300 transition-colors duration-300 group-focus-within:text-bronze-300"
                       >
                         What's on your mind?
                       </label>
                       <textarea
                         id="message"
                         name="message"
-                        rows={5}
+                        rows={4}
                         required
                         placeholder="The role or project, what you're building, and how you think I could help…"
-                        className="w-full resize-none rounded-xl neu-inset px-4 py-3 text-[13.5px] leading-relaxed text-ash-100 placeholder:text-ink-500 outline-none transition-all duration-400 focus:shadow-[inset_4px_4px_10px_rgba(0,0,0,.7),inset_-4px_-4px_10px_rgba(255,255,255,.03),0_0_0_1px_rgba(200,168,121,.4)]"
+                        className="w-full resize-none rounded-xl border border-white/12 bg-white/[0.04] px-4 py-3 text-[14px] leading-relaxed text-white placeholder:text-ash-400/40 outline-none backdrop-blur-md transition-all duration-300 focus:border-bronze-400/80 focus:bg-white/[0.07] focus:shadow-[0_0_20px_rgba(200,168,121,0.18)]"
                       />
                     </div>
                   </div>
 
                   <div className="mt-7 flex flex-wrap items-center justify-between gap-4">
-                    <p className="max-w-[16rem] text-[11px] leading-relaxed text-ink-500">
-                      Your details stay with me. No lists, no forwarding, no follow-up spam.
+                    <p className="max-w-[17rem] text-[11.5px] leading-relaxed text-ash-400">
+                      Your details stay private. No lists, no forwarding, no follow-up spam.
                     </p>
                     <PrimaryButton type="submit" className={cn(busy && "pointer-events-none opacity-80")}>
                       {busy ? "Sending…" : "Send message"}
@@ -204,7 +204,7 @@ export default function Contact() {
           <Reveal dir="right" delay={90} className="lg:col-span-5">
             <div className="flex h-full flex-col gap-4">
               <div className="rounded-[1.75rem] glass p-7">
-                <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-ink-500">Direct channels</p>
+                <p className="font-mono text-[10.5px] uppercase tracking-[0.24em] text-bronze-300/90">Direct channels</p>
                 <div className="mt-5 space-y-2">
                   {CHANNELS.map((c, i) => (
                     <a
@@ -212,19 +212,19 @@ export default function Contact() {
                       href={c.href}
                       target={c.href.startsWith("http") ? "_blank" : undefined}
                       rel="noreferrer"
-                      className="group flex items-center gap-4 rounded-2xl px-3.5 py-3 transition-all duration-500 hover:translate-x-1.5 hover:bg-white/[0.04]"
+                      className="group flex items-center gap-4 rounded-2xl border border-white/5 bg-white/[0.02] px-4 py-3 transition-all duration-500 hover:translate-x-1.5 hover:border-bronze-400/30 hover:bg-white/[0.06]"
                       style={{ transitionDelay: `${i * 30}ms` }}
                     >
-                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl neu text-ash-400 transition-all duration-500 group-hover:text-bronze-300 group-hover:shadow-[0_0_0_1px_rgba(200,168,121,.28)]">
+                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-white/10 bg-white/[0.04] text-ash-300 transition-all duration-500 group-hover:border-bronze-400/40 group-hover:text-bronze-300 group-hover:shadow-[0_0_15px_rgba(200,168,121,.25)]">
                         <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
                           <path d={c.icon} />
                         </svg>
                       </span>
                       <span className="min-w-0 flex-1">
-                        <span className="block font-mono text-[9.5px] uppercase tracking-[0.18em] text-ink-500">{c.k}</span>
-                        <span className="block truncate text-[13px] text-ash-200 transition-colors group-hover:text-white">{c.v}</span>
+                        <span className="block font-mono text-[9.5px] uppercase tracking-[0.18em] text-ash-400">{c.k}</span>
+                        <span className="block truncate text-[13.5px] font-medium text-ash-100 transition-colors group-hover:text-white">{c.v}</span>
                       </span>
-                      <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0 text-ink-500 transition-all duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-bronze-300" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                      <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0 text-ash-400 transition-all duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-bronze-300" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M7 17 17 7M8 7h9v9" />
                       </svg>
                     </a>
@@ -232,7 +232,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="relative flex-1 overflow-hidden rounded-[1.75rem] neu p-7">
+              <div className="relative flex-1 overflow-hidden rounded-[1.75rem] glass p-7">
                 <div className="pointer-events-none absolute inset-0 bg-dots opacity-25" />
                 <div className="relative">
                   <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-ink-500">Local time</p>
